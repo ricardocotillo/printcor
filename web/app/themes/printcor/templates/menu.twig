@@ -20,6 +20,7 @@
         <li class="{{ item.classes | join(' ') }} {% if item.has_children %}relative{% endif %} {% if submenu %}py-2{% endif %}">
           <a
             target="{{ item.target }}"
+            class="font-bold"
             href="{% if is_front_page or submenu %}{{ item.link }}{% else %}{{ site.url }}/{{ item.link }}{% endif %}"
           >
             {{ item.title }}
