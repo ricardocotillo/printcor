@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}} mt-28" id="post-{{post.ID}}">
+			<section class="article-content container mx-auto flex items-center">
+				<div class="w-full px-3">
+          <h1 class="article-h1 text-4xl font-bold text-red-500 mb-4">{{post.title}}</h1>
+          <div class="article-body">
+            {{post.content}}
+          </div>
+        </div>
+        {% if post.thumbnail %}
+          <div class="w-full">
+            <img src="{{ post.thumbnail.src }}" class="w-2/3 mx-auto" alt="Image for {{ post.title }}" />
+          </div>
+        {% endif %}
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

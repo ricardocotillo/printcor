@@ -1,0 +1,98 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content" id="home">
+				<div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <div class="splide__slide h-screen bg-center bg-no-repeat bg-cover flex justify-center items-center" style="background-image: url({{ site.theme.link }}/static/img/074.jpg)">
+                <h1 class="text-2xl md:text-5xl text-center font-bold text-white">Industria gráfica que impresiona.</h1>
+              </div>
+              <div class="splide__slide h-screen bg-center bg-no-repeat bg-cover relative" style="background-image: url({{ site.theme.link }}/static/img/101.jpg)">
+                <h1 class="text-2xl font-bold text-white absolute right-10 md:right-20 top-20 md:top-1/3">Detalles<br>que impresionan.</h1>
+              </div>
+              <div class="splide__slide h-screen bg-center bg-no-repeat bg-cover relative" style="background-image: url({{ site.theme.link }}/static/img/119.jpg)">
+                <h1 class="text-2xl font-bold text-white absolute left-10 md:left-20 bottom-20 md:bottom-1/3">Compromiso<br>con el planeta.</h1>
+              </div>
+            </ul>
+          </div>
+        </div>
+			</section>
+      <br><br>
+      <section class="container mx-auto" id="experiencia">
+        <h1 class="text-3xl md:text-5xl text-center mb-8 font-bold">Experiencia</h1>
+        <div class="splide hidden md:block" data-splide='{"autoplay": true, "perPage": 3, "gap": "2rem", "type": "loop"}'>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/017.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/044.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/053.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/094.jpg" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="splide block md:hidden" data-splide='{"autoplay": true, "type": "loop"}'>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/017.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/044.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/053.jpg" />
+              </li>
+              <li class="splide__slide">
+                <img src="{{ site.theme.link }}/static/img/experiencia/094.jpg" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 text-center md:w-1/2 mx-auto px-2">Somos una empresa lider con más de 17 años en el mercado peruano, dedicados a la industria gráfica, la innovación y el compromiso con el medio ambiente prueba de ello es la confianza que nuestros clientes nos depositan y como res- puesta logramos una relación de éxito y confianza gracias a nuestra gente, proce- sos y puntualidad.</p>
+      </section>
+      <br><br>
+      <section class="h-screen bg-center bg-cover bg-no-repeat" style="background-image: url({{ site.theme.link }}/static/img/servicios/130.jpg)">
+      </section>
+      <section class="container mx-auto">
+        <img class="w-full md:w-3/4 mx-auto" src="{{ site.theme.link }}/static/img/clientes/clientes-printcor.png" />
+      </section>
+      <br>
+      <br>
+      <section class="container mx-auto">
+        <h1 class="text-3xl md:text-5xl text-center mb-8 font-bold">Certificación PEFC</h1>
+        <img class="max-auto w-full" src="{{ site.theme.link }}/static/img/certificacion/blog-badge.jpg" />
+        <br><br>
+        <p class="w-full px-2 md:w-2/3 mx-auto text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nesciunt, commodi architecto, enim laborum totam voluptatem fuga ab ex suscipit nemo modi itaque qui officiis eum velit. Itaque, nobis inventore. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum laboriosam officia voluptatum molestias? Unde, totam voluptatem eaque sed dolore vel molestiae qui provident animi, eos eligendi harum ut, enim iusto.</p>
+      </section>
+      <br><br>
+      <section class="h-screen bg-center bg-cover bg-no-repeat bg-red-600">
+        <div class="container mx-auto h-screen flex items-center">
+          <form action="{{ form_action }}" method="POST" class=" w-full md:w-1/3 p-4 backdrop-blur-lg">
+            <input type="hidden" name="action" value="contact_form">
+            <div>
+              <label for="" class="font-bold text-gray-700">Déjanos tu mail</label><br>
+              <input class="w-full" type="email" name="email">
+            </div>
+            <div>
+              <label for="" class="font-bold text-gray-700">Déjanos tu mensaje</label><br>
+              <textarea class="w-full h-40" name="message"></textarea>
+            </div>
+            <button class="bg-green-400 hover:bg-green-500 hover:text-white transition w-full p-2 text-center rounded-sm">Enviar</button><br><br>
+            <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7799.705156275331!2d-77.01791899134764!3d-12.190432607200416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b760f8fd0873%3A0xeea5d6b6ed0f1e94!2sPrintCor!5e0!3m2!1sen!2spe!4v1635718468586!5m2!1sen!2spe" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </form>
+        </div>
+      </section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

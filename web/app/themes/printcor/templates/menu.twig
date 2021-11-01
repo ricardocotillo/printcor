@@ -1,0 +1,32 @@
+{% if menu %}
+  {% if mobile %}
+    <ul class="text-white px-4">
+      {% for item in items %}
+        <li class="{{ item.classes | join(' ') }} my-3">
+          <a
+            target="{{ item.target }}"
+            class="font-bold text-xl"
+            href="{% if is_front_page or submenu %}{{ item.link }}{% else %}{{ site.url }}/{{ item.link }}{% endif %}"
+          >
+            {{ item.title }}
+          </a>
+          {% include "menu.twig" with {'items': item.children, 'submenu': true} %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <ul class="{% if submenu %}absolute z-20 bg-red-500 hidden{% else %}flex{% endif %} text-white px-4 justify-around">
+      {% for item in items %}
+        <li class="{{ item.classes | join(' ') }} {% if item.has_children %}relative{% endif %} {% if submenu %}py-2{% endif %}">
+          <a
+            target="{{ item.target }}"
+            href="{% if is_front_page or submenu %}{{ item.link }}{% else %}{{ site.url }}/{{ item.link }}{% endif %}"
+          >
+            {{ item.title }}
+          </a>
+          {% include "menu.twig" with {'items': item.children, 'submenu': true} %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endif %}
