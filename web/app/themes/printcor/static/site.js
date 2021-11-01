@@ -2,6 +2,10 @@ jQuery( document ).ready( function( $ ) {
 
   const menu = $('#nav-main-mobile')
 
+  window.onload = function() {
+    $('#splash-screen').fadeOut('fast')
+  }
+
   $('#hamburger').click(function() {
     menu.fadeIn('fast')
   })
@@ -18,4 +22,5 @@ jQuery( document ).ready( function( $ ) {
   $('#experiencia .splide').each((i, el) => {
     new Splide(el).mount()
   })
+
 })

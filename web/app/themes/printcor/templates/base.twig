@@ -8,10 +8,10 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
+		<header class="header sticky top-0 z-10">
 			{% block header %}
         <div class="w-full bg-gray-400 text-right pr-5 md:pr-20 py-3">
-          <span class="text-white">Contactos</span>
+          <a href="#contacto" class="text-white">Contactos</a>
           <a href="https://goo.gl/maps/xtShcgWNeEFqErCDA" target="_blank"><i class="fas fa-map-marker-alt ml-4 text-white"></i></a>
           <a href="mailto:atencionalcliente@printcorsac.com" target="_blank"><i class="far fa-envelope ml-4 text-white"></i></a>
           <a href="https://www.facebook.com/Printcorperu/" target="_blank"><i class="fab fa-facebook-f ml-4 text-white"></i></a>
@@ -61,5 +61,8 @@
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
+    <div id="splash-screen" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+      <i class="fas fa-circle-notch fa-spin text-red-500 text-4xl"></i>
+    </div>
 	</body>
 </html>
