@@ -918,6 +918,14 @@ select {
   display: none;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -928,6 +936,14 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-2\/3 {
@@ -1144,6 +1160,10 @@ nav.nav-main li.menu-item-has-children:hover ul {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-screen {
+    height: 100vh;
   }
 
   .md\:w-1\/2 {
