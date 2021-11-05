@@ -13,12 +13,7 @@
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
  */
-$composer_autoload = __DIR__ . '/vendor/autoload.php';
-if ( file_exists( $composer_autoload ) ) {
-	require_once $composer_autoload;
-	$timber = new Timber\Timber();
-	error_log(print_r($timber, true));
-}
+$timber = new Timber\Timber();
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.
