@@ -2,18 +2,6 @@ jQuery( document ).ready( function( $ ) {
 
   const menu = $('#nav-main-mobile')
 
-  window.onload = function() {
-    $('#splash-screen').fadeOut('fast')
-  }
-
-  $('#hamburger').click(function() {
-    menu.fadeIn('fast')
-  })
-
-  $('#nav-main-mobile .close').click(function() {
-    menu.fadeOut('fast')
-  })
-
   new Splide('#home .splide', {
     autoplay: true,
     loop: true,
@@ -23,4 +11,15 @@ jQuery( document ).ready( function( $ ) {
     new Splide(el).mount()
   })
 
+  $('#hamburger').click(function() {
+    menu.fadeIn('fast')
+  })
+
+  $('#nav-main-mobile .close').click(function() {
+    menu.fadeOut('fast')
+  })
+
+  window.onload = function() {
+    $('#splash-screen').fadeOut('fast')
+  }
 })
