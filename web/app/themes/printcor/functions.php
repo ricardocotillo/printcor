@@ -62,6 +62,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+		add_filter( 'script_loader_tag', array( $this, 'defer_js' ), 10 );
 		add_filter( 'use_block_editor_for_post_type', array( $this, 'disable_gutenberg_editor' ) );
 		parent::__construct();
 	}
@@ -79,7 +80,16 @@ class StarterSite extends Timber\Site {
 	}
 
 	public function add_scripts() {
-		wp_enqueue_script( 'rc_site_js', get_template_directory_uri() . '/static\/site.js', array( 'jquery' ) );
+		wp_enqueue_style( 'rc_splide_css', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css', null );
+		wp_enqueue_script( 'rc_splide_js', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js', null );
+		wp_enqueue_script( 'rc_site_js', get_template_directory_uri() . '/static\/site.js', array( 'jquery', 'rc_splide_js' ) );
+	}
+
+	function defer_js( $url ) {
+		if ( is_user_logged_in() ) return $url; //don't break WP Admin
+		if ( FALSE === strpos( $url, '.js' ) ) return $url;
+		if ( strpos( $url, 'jquery.js' ) ) return $url;
+		return str_replace( ' src', ' defer src', $url );
 	}
 
 	/** This is where you add some context
