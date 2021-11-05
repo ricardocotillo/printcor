@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78af9f35a70806c180ddce22fac1b999",
+    "content-hash": "1183b5ae22edf69b580bba9075be698a",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1314,22 +1314,40 @@
             "time": "2021-01-20T15:23:13+00:00"
         },
         {
-            "name": "wpackagist-theme/blankslate",
-            "version": 2021,
+            "name": "wpackagist-plugin/autoptimize",
+            "version": "2.9.2",
             "source": {
                 "type": "svn",
-                "url": "https://themes.svn.wordpress.org/blankslate/",
-                "reference": 2021
+                "url": "https://plugins.svn.wordpress.org/autoptimize/",
+                "reference": "tags/2.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/blankslate.2021.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
             },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/blankslate/"
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoptimize/"
+        },
+        {
+            "name": "wpackagist-plugin/cache-enabler",
+            "version": "1.8.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cache-enabler/",
+                "reference": "tags/1.8.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cache-enabler.1.8.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cache-enabler/"
         }
     ],
     "packages-dev": [
