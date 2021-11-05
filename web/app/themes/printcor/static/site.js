@@ -2,14 +2,22 @@ jQuery( document ).ready( function( $ ) {
 
   const menu = $('#nav-main-mobile')
 
-  new Splide('#home .splide', {
-    autoplay: true,
-    loop: true,
-  }).mount()
+  const splide = $('#home .splide')
 
-  $('#experiencia .splide').each((i, el) => {
-    new Splide(el).mount()
-  })
+  if (splide.length > 0) {
+    new Splide('#home .splide', {
+      autoplay: true,
+      loop: true,
+    }).mount()
+  }
+
+  const splides = $('#experiencia .splide')
+  
+  if (splides.length > 0) {
+    splides.each((i, el) => {
+      new Splide(el).mount()
+    })
+  }
 
   $('#hamburger').click(function() {
     menu.fadeIn('fast')
