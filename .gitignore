@@ -26,3 +26,5 @@ wp-cli.local.yml
 node_modules
 
 cache
+web/app/settings/
+web/app/advanced-cache.php

@@ -27,7 +27,5 @@ jQuery( document ).ready( function( $ ) {
     menu.fadeOut('fast')
   })
 
-  window.onload = function() {
-    $('#splash-screen').fadeOut('fast')
-  }
+  $('#splash-screen').fadeOut('fast')
 })
