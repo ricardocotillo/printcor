@@ -19,6 +19,13 @@ jQuery( document ).ready( function( $ ) {
     })
   }
 
+  const clientes = $('#clientes .splide')
+  if (clientes.length > 0) {
+    clientes.each((i, el) => {
+      new Splide(el).mount()
+    })
+  }
+
   $('#hamburger').click(function() {
     menu.fadeIn('fast')
   })

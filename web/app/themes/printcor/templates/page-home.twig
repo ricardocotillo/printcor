@@ -64,8 +64,25 @@
       <br><br>
       <section id="servicios" class="h-72 md:h-screen bg-center bg-cover bg-no-repeat" style="background-image: url({{ site.theme.link }}/static/img/servicios/130.webp)">
       </section>
-      <section id="clientes" class="container mx-auto">
-        <img class="w-full md:w-3/4 mx-auto" src="{{ site.theme.link }}/static/img/clientes/clientes-printcor.png" />
+      <section id="clientes" class="container mx-auto mt-3">
+        <div class="splide w-full md:w-3/4 mx-auto" data-splide='{"autoplay": true, "type": "loop", "autoplay": true}'>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img class="w-full" src="{{ site.theme.link }}/static/img/clientes/clientes1.svg" />
+              </li>
+              <li class="splide__slide">
+                <img class="w-full" src="{{ site.theme.link }}/static/img/clientes/clientes2.svg" />
+              </li>
+              <li class="splide__slide">
+                <img class="w-full" src="{{ site.theme.link }}/static/img/clientes/clientes3.svg" />
+              </li>
+              <li class="splide__slide">
+                <img class="w-full" src="{{ site.theme.link }}/static/img/clientes/clientes4.svg" />
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
       <br>
       <br>
