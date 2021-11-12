@@ -844,20 +844,16 @@ select {
   top: 5rem;
 }
 
+.bottom-40 {
+  bottom: 10rem;
+}
+
 .left-10 {
   left: 2.5rem;
 }
 
 .bottom-20 {
   bottom: 5rem;
-}
-
-.bottom-40 {
-  bottom: 10rem;
-}
-
-.bottom-16 {
-  bottom: 4rem;
 }
 
 .z-10 {
@@ -906,6 +902,10 @@ select {
   margin-top: 0.75rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -916,10 +916,6 @@ select {
 
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .block {
@@ -1018,10 +1014,6 @@ select {
   background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
 }
 
-.bg-none {
-  background-image: none;
-}
-
 .bg-cover {
   background-size: cover;
 }
@@ -1118,14 +1110,14 @@ select {
   color: rgba(239, 68, 68, var(--tw-text-opacity));
 }
 
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
 
 .backdrop-blur-lg {
