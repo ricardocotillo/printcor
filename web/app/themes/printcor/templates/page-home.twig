@@ -109,7 +109,8 @@
         <p class="w-full px-2 md:w-2/3 mx-auto text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nesciunt, commodi architecto, enim laborum totam voluptatem fuga ab ex suscipit nemo modi itaque qui officiis eum velit. Itaque, nobis inventore. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum laboriosam officia voluptatum molestias? Unde, totam voluptatem eaque sed dolore vel molestiae qui provident animi, eos eligendi harum ut, enim iusto.</p>
       </section>
       <br><br>
-      <section id="contacto" class="h-screen bg-center bg-cover bg-no-repeat" style="background-image: url({{ site.theme.link }}/static/img/contacto/office-2.jpeg)">
+      <div id="contacto"></div>
+      <section class="h-screen hidden md:block bg-center bg-cover bg-no-repeat" style="background-image: url({{ site.theme.link }}/static/img/contacto/office-2.jpeg)">
         <div class="container mx-auto h-screen flex items-center">
           <form action="{{ form_action }}" method="POST" class=" w-full md:w-1/3 p-4 backdrop-brightness-50 backdrop-blur-lg rounded-md">
             <input type="hidden" name="action" value="contact_form">
@@ -126,6 +127,24 @@
           </form>
         </div>
       </section>
+      <section class="h-screen block md:hidden">
+        <img class="w-full" src="{{ site.theme.link }}/static/img/contacto/office-2.jpeg" alt="contact picture">
+        <div class="container mx-auto h-screen flex items-center">
+          <form action="{{ form_action }}" method="POST" class=" w-full md:w-1/3 p-4 rounded-md">
+            <input type="hidden" name="action" value="contact_form">
+            <div>
+              <label for="" class="font-bold text-gray-400">Déjanos tu mail</label><br>
+              <input class="w-full" type="email" name="email">
+            </div>
+            <div>
+              <label for="" class="font-bold text-gray-400">Déjanos tu mensaje</label><br>
+              <textarea class="w-full h-40" name="message"></textarea>
+            </div>
+            <button class="bg-green-400 hover:bg-green-500 hover:text-white transition w-full p-2 text-center rounded-sm mt-4">Enviar</button><br><br>
+            <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7799.705156275331!2d-77.01791899134764!3d-12.190432607200416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b760f8fd0873%3A0xeea5d6b6ed0f1e94!2sPrintCor!5e0!3m2!1sen!2spe!4v1635718468586!5m2!1sen!2spe" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </form>
+        </div>
+      </section>
 		</article>
-	</div><!-- /content-wrapper -->
+	</div>
 {% endblock %}
