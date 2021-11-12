@@ -25,4 +25,7 @@ $context = Timber::context();
 
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
+// if ($timber_post->post_name == 'home') {
+//     $context['slider'] = carbon_get_theme_option( 'rcp_slider' );
+// }
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
