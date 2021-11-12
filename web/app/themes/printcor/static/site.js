@@ -29,7 +29,12 @@ jQuery( document ).ready( function( $ ) {
   const clientes = $('#clientes .splide')
   if (clientes.length > 0) {
     clientes.each((i, el) => {
-      new Splide(el).mount()
+      new Splide(el, {
+        autoplay: true,
+        type: 'loop',
+        interval: 3000,
+        pagination: false,
+      }).mount()
     })
   }
 
