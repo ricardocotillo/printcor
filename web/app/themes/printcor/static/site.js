@@ -7,7 +7,8 @@ jQuery( document ).ready( function( $ ) {
   if (splide.length > 0) {
     new Splide('#home .splide', {
       autoplay: true,
-      loop: true,
+      type: 'loop',
+      interval: 3000,
     }).mount()
   }
 
