@@ -16,7 +16,11 @@ jQuery( document ).ready( function( $ ) {
   
   if (splides.length > 0) {
     splides.each((i, el) => {
-      new Splide(el).mount()
+      new Splide(el, {
+        autoplay: true,
+        type: 'loop',
+        interval: 3000,
+      }).mount()
     })
   }
 
