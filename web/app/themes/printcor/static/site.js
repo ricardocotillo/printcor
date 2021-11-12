@@ -9,6 +9,7 @@ jQuery( document ).ready( function( $ ) {
       autoplay: true,
       type: 'loop',
       interval: 3000,
+      pauseOnHover: false,
     }).mount()
   }
 
