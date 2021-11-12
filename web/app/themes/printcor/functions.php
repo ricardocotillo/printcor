@@ -8,11 +8,9 @@
  * @since   Timber 0.1
  */
 
-/**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block.
- */
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
 $timber = new Timber\Timber();
 
 /**
@@ -64,6 +62,8 @@ class StarterSite extends Timber\Site {
 		add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
 		add_filter( 'script_loader_tag', array( $this, 'defer_js' ), 10 );
 		add_filter( 'use_block_editor_for_post_type', array( $this, 'disable_gutenberg_editor' ) );
+		add_action( 'after_setup_theme', array( $this, 'crb_load' ) );
+		add_action( 'carbon_fields_register_fields', array( $this, 'crb_attach_theme_options' ) );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -77,6 +77,33 @@ class StarterSite extends Timber\Site {
 
 	public function disable_gutenberg_editor() {
 		return false;
+	}
+
+	function crb_attach_theme_options() {
+		Container::make( 'theme_options', __( 'Theme Options' ) )
+			->add_fields( array(
+				Field::make( 'complex', 'rcp_slider' )
+					->add_fields( 'slide', array(
+						Field::make( 'image', 'image' )->set_value_type( 'url' ),
+						Field::make( 'text', 'caption' ),
+						Field::make( 'select', 'alignx', __( 'Align X' ) )
+							->add_options( array(
+								'left' => __( 'Left' ),
+								'center' => __( 'Center' ),
+								'right' => __( 'Right' ),
+							) ),
+						Field::make( 'select', 'aligny', __( 'Align Y' ) )
+							->add_options( array(
+								'top' => __( 'Top' ),
+								'center' => __( 'Center' ),
+								'bottom' => __( 'Bottom' ),
+							) )
+					) )
+			) );
+	}
+
+	function crb_load() {
+		\Carbon_Fields\Carbon_Fields::boot();
 	}
 
 	public function add_scripts() {

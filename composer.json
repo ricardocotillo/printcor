@@ -42,7 +42,9 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "timber/timber": "^1.19",
     "wpackagist-plugin/autoptimize": "^2.9",
-    "wpackagist-plugin/cache-enabler": "^1.8"
+    "wpackagist-plugin/cache-enabler": "^1.8",
+    "mnsami/composer-custom-directory-installer": "^2.0",
+    "htmlburger/carbon-fields": "^3.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6.0",
@@ -58,7 +60,8 @@
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/themes/{$name}/": ["type:wordpress-theme"],
+      "web/app/themes/printcor/vendor/{$vendor}/{$name}/": ["htmlburger/carbon-fields"]
     },
     "wordpress-install-dir": "web/wp"
   },
