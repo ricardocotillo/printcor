@@ -20,6 +20,8 @@ jQuery( document ).ready( function( $ ) {
         autoplay: true,
         type: 'loop',
         interval: 3000,
+        perMove: 1,
+        pagination: false,
       }).mount()
     })
   }
