@@ -80,9 +80,10 @@ class StarterSite extends Timber\Site {
 	}
 
 	function crb_attach_theme_options() {
-		Container::make( 'theme_options', __( 'Theme Options' ) )
+		Container::make( 'post_meta', __( 'Additional' ) )
+			->where('post_id', '=', get_option( 'page_on_front' ) )
 			->add_fields( array(
-				Field::make( 'complex', 'rcp_slider' )
+				Field::make( 'complex', 'rcp_slider', __( 'Main Slider' ) )
 					->add_fields( 'slide', array(
 						Field::make( 'image', 'image' )->set_value_type( 'url' ),
 						Field::make( 'text', 'caption' ),
