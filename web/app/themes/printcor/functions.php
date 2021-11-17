@@ -101,6 +101,14 @@ class StarterSite extends Timber\Site {
 							) )
 					) )
 			) );
+		
+		Container::make( 'theme_options', __( 'Global Settings' ) )
+			->add_fields( array(
+                Field::make( 'text', 'whatsapp_link', __( 'Whatsapp Link' ) ),
+                Field::make( 'text', 'map_link', __( 'Map Link' ) )->set_attribute( 'type', 'url' ),
+                Field::make( 'text', 'email', __( 'Email' ) )->set_attribute( 'type', 'email' ),
+                Field::make( 'text', 'facebook_link', __( 'Facebook Link' ) )->set_attribute( 'type', 'url' ),
+            ) );
 
 	}
 
@@ -129,11 +137,18 @@ class StarterSite extends Timber\Site {
 		$context['is_front_page'] = is_front_page();
 		$context['menu']  = new Timber\Menu();
 		$logo_id = get_theme_mod( 'custom_logo' );
+        $global_settings = array(
+            'whatsapp_link' => carbon_get_theme_option( 'whatsapp_link' ),
+            'map_link'      => carbon_get_theme_option( 'map_link' ),
+            'facebook_link' => carbon_get_theme_option( 'facebook_link' ),
+            'email'         => carbon_get_theme_option( 'email' ),
+        );
 		if (isset($logo_id)) {
 			$image = wp_get_attachment_image_src( $logo_id , 'full' );
 			$context['logo'] = $image[0];
 		}
 		$context['site']  = $this;
+        $context['global_settings'] = $global_settings;
 		return $context;
 	}
 

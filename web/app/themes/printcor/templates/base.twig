@@ -12,9 +12,9 @@
 			{% block header %}
         <div class="w-full bg-gray-400 text-right pr-5 md:pr-20 py-3">
           <a href="#contacto" class="text-white">Contactos</a>
-          <a href="https://goo.gl/maps/xtShcgWNeEFqErCDA" target="_blank"><i class="fas fa-map-marker-alt ml-4 text-white"></i></a>
-          <a href="mailto:atencionalcliente@printcorsac.com" target="_blank"><i class="far fa-envelope ml-4 text-white"></i></a>
-          <a href="https://www.facebook.com/Printcorperu/" target="_blank"><i class="fab fa-facebook-f ml-4 text-white"></i></a>
+          <a href="{{ global_settings.map_link }}" target="_blank"><i class="fas fa-map-marker-alt ml-4 text-white"></i></a>
+          <a href="mailto:{{ global_settings.email }}" target="_blank"><i class="far fa-envelope ml-4 text-white"></i></a>
+          <a href="{{ global_settings.facebook_link }}" target="_blank"><i class="fab fa-facebook-f ml-4 text-white"></i></a>
         </div>
 				<div class="wrapper bg-red-500 hidden md:block">
           <div class="container mx-auto flex items-center py-4">
@@ -22,14 +22,14 @@
             <nav id="nav-main" class="nav-main flex-grow" role="navigation">
               {% include "menu.twig" with {'items': menu.get_items} %}
             </nav><!-- #nav -->
-            <a target="_blank" href="https://wa.me/51998277290"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
+            <a target="_blank" href="{{ global_settings.whatsapp_link }}"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
           </div>
 				</div>
 				<div class="wrapper bg-red-500 block md:hidden">
           <div class="container mx-auto flex items-center justify-between p-4">
             <i id="hamburger" class="fas fa-bars text-white"></i>
             <a href="/"><img class="w-40" src="{{ logo }}" alt="logo printcor"></a>
-            <a target="_blank" href="https://wa.me/51998277290"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
+            <a target="_blank" href="{{ global_settings.whatsapp_link }}"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
           </div>
 				</div>
         <nav id="nav-main-mobile" class="nav-main hidden bg-red-500 fixed inset-0 z-50" role="navigation">
