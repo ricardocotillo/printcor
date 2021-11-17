@@ -27,5 +27,6 @@ $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
 if (is_front_page()) {
     $context['slider'] = carbon_get_post_meta( get_the_ID(), 'rcp_slider' );
+    $context['clientes'] = carbon_get_post_meta( get_the_ID(), 'rcp_clientes' );
 }
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

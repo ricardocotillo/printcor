@@ -99,7 +99,12 @@ class StarterSite extends Timber\Site {
 								'center' => __( 'Center' ),
 								'bottom' => __( 'Bottom' ),
 							) )
-					) )
+					) ),
+				Field::make( 'complex', 'rcp_clientes', __( 'Clientes' ) )
+					->add_fields( 'slide', array(
+						Field::make( 'image', 'image' )->set_value_type( 'url' ),
+						Field::make( 'text', 'caption' ),
+					) ),
 			) );
 		
 		Container::make( 'theme_options', __( 'Global Settings' ) )
