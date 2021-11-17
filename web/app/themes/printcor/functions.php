@@ -63,7 +63,7 @@ class StarterSite extends Timber\Site {
 		add_filter( 'script_loader_tag', array( $this, 'defer_js' ), 10 );
 		add_filter( 'use_block_editor_for_post_type', array( $this, 'disable_gutenberg_editor' ) );
 		add_action( 'after_setup_theme', array( $this, 'crb_load' ) );
-		add_action( 'carbon_fields_register_fields', array( $this, 'crb_attach_theme_options' ) );
+		add_action( 'carbon_fields_register_fields', array( $this, 'rcp_meta_boxes' ) );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -79,7 +79,7 @@ class StarterSite extends Timber\Site {
 		return false;
 	}
 
-	function crb_attach_theme_options() {
+	function rcp_meta_boxes() {
 		Container::make( 'post_meta', __( 'Additional' ) )
 			->where('post_id', '=', get_option( 'page_on_front' ) )
 			->add_fields( array(
@@ -101,6 +101,7 @@ class StarterSite extends Timber\Site {
 							) )
 					) )
 			) );
+
 	}
 
 	function crb_load() {
