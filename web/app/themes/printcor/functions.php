@@ -127,6 +127,11 @@ class StarterSite extends Timber\Site {
 	public function add_to_context( $context ) {
 		$context['is_front_page'] = is_front_page();
 		$context['menu']  = new Timber\Menu();
+		$logo_id = get_theme_mod( 'custom_logo' );
+		if (isset($logo_id)) {
+			$image = wp_get_attachment_image_src( $logo_id , 'full' );
+			$context['logo'] = $image[0];
+		}
 		$context['site']  = $this;
 		return $context;
 	}
@@ -183,6 +188,8 @@ class StarterSite extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
+
+		add_theme_support( 'custom-logo' );
 	}
 
 	/** This Would return 'foo bar!'.
