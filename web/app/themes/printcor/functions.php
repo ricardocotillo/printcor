@@ -84,6 +84,7 @@ class StarterSite extends Timber\Site {
 			->where('post_id', '=', get_option( 'page_on_front' ) )
 			->add_fields( array(
 				Field::make( 'complex', 'rcp_slider', __( 'Main Slider' ) )
+                    ->set_collapsed( true )
 					->add_fields( 'slide', array(
 						Field::make( 'image', 'image' )->set_value_type( 'url' ),
 						Field::make( 'text', 'caption' ),
@@ -100,12 +101,23 @@ class StarterSite extends Timber\Site {
 								'bottom' => __( 'Bottom' ),
 							) )
 					) ),
-				Field::make( 'complex', 'rcp_clientes', __( 'Clientes' ) )
+			) )
+            ->add_fields(
+                array(
+                    Field::make( 'complex', 'rcp_clientes', __( 'Clientes' ) )
+                    ->set_collapsed( true )
 					->add_fields( 'slide', array(
 						Field::make( 'image', 'image' )->set_value_type( 'url' ),
 						Field::make( 'text', 'caption' ),
 					) ),
-			) );
+                )
+            )
+            ->add_fields(
+                array(
+                    Field::make( 'image', 'rcp_certification_image', __('Certification Image') )->set_value_type( 'url' ),
+                    Field::make( 'textarea', 'rcp_certification_text', __('Certification Text') ),
+                )
+            );
 		
 		Container::make( 'theme_options', __( 'Global Settings' ) )
 			->add_fields( array(
