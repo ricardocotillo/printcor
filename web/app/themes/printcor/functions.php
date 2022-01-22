@@ -115,7 +115,7 @@ class StarterSite extends Timber\Site {
             ->add_fields(
                 array(
                     Field::make( 'image', 'rcp_certification_image', __('Certification Image') )->set_value_type( 'url' ),
-                    Field::make( 'textarea', 'rcp_certification_text', __('Certification Text') ),
+                    Field::make( 'rich_text', 'rcp_certification_text', __('Certification Text') ),
                 )
             );
 		
