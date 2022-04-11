@@ -1,9 +1,8 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     '../templates/**/*.twig'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       height: {

@@ -37,7 +37,7 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "5.8.2",
+    "roots/wordpress": "^5.9",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "timber/timber": "^1.19",
@@ -53,7 +53,12 @@
   },
   "config": {
     "optimize-autoloader": true,
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "mnsami/composer-custom-directory-installer": true,
+      "roots/wordpress-core-installer": true,
+      "composer/installers": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
